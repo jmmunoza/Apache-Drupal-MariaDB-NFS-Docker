@@ -11,6 +11,18 @@
             "name": "mariadb",
             "database": "mariadb",
             "username": "mariadb"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "34.205.19.6",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "AWSRETO3",
+            "database": "mariadb",
+            "username": "mariadb"
         }
     ]
 }
