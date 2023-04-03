@@ -11,6 +11,5 @@ services:
       DRUPAL_DATABASE_PASSWORD: mariadb
     volumes:
       - ./drupal-data:/var/www/html
-    command: --bind-address=0.0.0.0
     ports:
-      - "8081:80"
+      - "80:80"
