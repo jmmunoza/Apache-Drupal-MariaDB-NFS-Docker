@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  reto3-mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: mariadb
+      MARIADB_DATABASE: mariadb
+      MARIADB_USER: mariadb
+      MARIADB_PASSWORD: mariadb
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"

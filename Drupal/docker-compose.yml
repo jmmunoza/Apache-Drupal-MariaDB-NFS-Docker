@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  drupal:
+    image: drupal:9-apache
+    restart: always
+    environment:
+      DRUPAL_DATABASE_HOST: localhost
+      DRUPAL_DATABASE_PORT: 3306
+      DRUPAL_DATABASE_NAME: mariadb
+      DRUPAL_DATABASE_USER: mariadb
+      DRUPAL_DATABASE_PASSWORD: mariadb
+    volumes:
+      - ./drupal-data:/var/www/html
+    command: --bind-address=0.0.0.0
+    ports:
+      - "8081:80"
