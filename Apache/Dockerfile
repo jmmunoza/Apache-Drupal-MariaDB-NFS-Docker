@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM drupal
 
 
 COPY apache.conf /usr/local/apache2/conf/

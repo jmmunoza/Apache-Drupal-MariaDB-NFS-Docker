@@ -17,10 +17,10 @@
                 "authProtocol": "default"
             },
             "previewLimit": 50,
-            "server": "34.205.19.6",
+            "server": "44.212.34.107",
             "port": 3306,
             "driver": "MariaDB",
-            "name": "AWSRETO3",
+            "name": "AWS",
             "database": "mariadb",
             "username": "mariadb"
         }
