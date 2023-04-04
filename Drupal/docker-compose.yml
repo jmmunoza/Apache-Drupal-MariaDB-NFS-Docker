@@ -6,14 +6,18 @@ services:
     ports:
       - 80:80
     volumes:
-      - drupal_modules:/var/www/html/modules
-      - drupal_profiles:/var/www/html/profiles
-      - drupal_themes:/var/www/html/themes
-      - drupal_sites:/var/www/html/sites
+      - type: volume
+        source: nfs
+        target: /var/www/html
+        volume:
+          nocopy: true
     restart: always
+    privileged: true
 
 volumes:
-  drupal_modules:
-  drupal_profiles:
-  drupal_themes:
-  drupal_sites:
+  nfs:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=${NFS_IP},nfsvers=4,rw,nolock,soft
+      device: :/var/nfs
