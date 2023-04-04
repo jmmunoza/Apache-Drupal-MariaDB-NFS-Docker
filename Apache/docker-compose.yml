@@ -7,5 +7,8 @@ services:
     image: httpd:2.4
     ports:
     - '80:80'
+    - '443:443'
     volumes:
     - ./website:/usr/local/apache2/htdocs
+    - ./server.crt:/usr/local/apache2/conf/server.crt
+    - ./server.key:/usr/local/apache2/conf/server.key
