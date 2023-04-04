@@ -6,11 +6,10 @@ services:
     ports:
       - 80:80
     volumes:
-      - type: volume
-        source: nfs
-        target: /var/www/html
-        volume:
-          nocopy: true
+      - nfs:/var/www/html/modules
+      - nfs:/var/www/html/profiles
+      - nfs:/var/www/html/themes
+      - nfs:/var/www/html/sites
     restart: always
     privileged: true
 
