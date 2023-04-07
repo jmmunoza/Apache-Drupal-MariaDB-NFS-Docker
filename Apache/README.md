@@ -6,10 +6,11 @@ En el archivo apache.conf, se configura el servidor Apache para que escuche en e
 
 En la sección <Proxy "balancer://mycluster"> se definen los servidores que actuarán como miembros del clúster, en este caso, los servidores drupal1.telematica.tech y drupal2.telematica.tech. La directiva ProxySet stickysession=JSESSIONID|jsessionid se utiliza para que el balanceador de carga mantenga la sesión del usuario en el mismo servidor durante toda la sesión.
 
-Las directivas ProxyPass y ProxyPassReverse se utilizan para indicar al servidor Apache cómo dirigir las solicitudes entrantes a los servidores miembros del clúster.
+El archivo docker-compose.yml define el servicio de Apache como un contenedor Docker. Se utiliza el archivo Dockerfile para crear la imagen del contenedor, que se basa en la imagen de Apache 2.4. En el archivo docker-compose.yml, se definen los puertos que el contenedor utilizará para recibir las solicitudes entrantes. Además, se definen un volumen para los certificados SSL.
 
-La sección SSLProxyEngine on habilita la función de proxy SSL, mientras que las directivas SSLProxyVerify none y SSLProxyCheckPeerName off se utilizan para deshabilitar la verificación del certificado SSL del servidor de origen.
+Para correr el contenedor usa:
 
-El archivo docker-compose.yml define el servicio de Apache como un contenedor Docker. Se utiliza el archivo Dockerfile para crear la imagen del contenedor, que se basa en la imagen de Apache 2.4. En el archivo docker-compose.yml, se definen los puertos que el contenedor utilizará para recibir las solicitudes entrantes. Además, se definen dos volúmenes, uno para el contenido del sitio web y otro para los certificados SSL.
-
-En conclusión, el load balancer hecho en Apache y dockerizado utiliza varios módulos de Apache para actuar como un proxy y balanceador de carga. Utiliza certificados SSL generados con Certbot y se ha configurado para escuchar en los puertos 80 y 443. La carpeta ssl contiene los certificados y claves SSL necesarios para el correcto funcionamiento del load balancer.
+```
+docker-compose build
+docker-compose up
+```
