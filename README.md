@@ -11,6 +11,6 @@ Además, hay una instancia de base de datos MariaDB y una instancia de archivos 
 En pocas palabras, esta es la arquitectura diseñada:
 
 <p align="center">
-  ![image](https://user-images.githubusercontent.com/69641274/230683327-eddd9bc0-78c6-4485-af33-370072f7cd4d.png)
+<img src="https://user-images.githubusercontent.com/69641274/230683327-eddd9bc0-78c6-4485-af33-370072f7cd4d.png" />
 </p>
 
